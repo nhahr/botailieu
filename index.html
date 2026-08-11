@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhà HR | The Fundamentals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#111111;
+    --yellow:#F5D908;
+    --cream:#FAF7EF;
+    --gray:#6b6b6b;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Be Vietnam Pro', sans-serif;
+    background:var(--cream);
+    color:var(--black);
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Playfair Display', serif;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 24px;}
+
+  /* NAV */
+  nav{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:20px 24px; border-bottom:1px solid rgba(0,0,0,0.08);
+  }
+  nav .logo{font-weight:700; letter-spacing:0.5px;}
+  .btn{
+    display:inline-block; background:var(--black); color:#fff;
+    padding:14px 28px; border-radius:6px; text-decoration:none;
+    font-weight:600; border:2px solid var(--black); transition:0.2s;
+  }
+  .btn:hover{background:var(--yellow); color:var(--black);}
+  .btn-outline{
+    background:transparent; color:var(--black); border:2px solid var(--black);
+  }
+  .btn-outline:hover{background:var(--black); color:#fff;}
+
+  /* HERO */
+  .hero{padding:80px 0 100px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:13px; letter-spacing:2px; font-weight:700; color:var(--gray);
+    margin-bottom:20px; text-transform:uppercase;
+  }
+  .eyebrow::before{content:""; width:24px; height:2px; background:var(--yellow);}
+  .hero h1{font-size:48px; line-height:1.25; margin-bottom:24px;}
+  .hero h1 em{color:var(--gray); font-style:italic; font-weight:600; display:block;}
+  .hero p.context{font-size:17px; color:#333; margin-bottom:20px; max-width:520px;}
+  .hero p.lead{font-size:17px; margin-bottom:32px; max-width:520px;}
+  .hero p.lead b{background:linear-gradient(transparent 60%, var(--yellow) 60%);}
+  .cta-row{display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+  .cta-row small{color:var(--gray); font-style:italic; font-size:14px;}
+  .hero-visual{
+    aspect-ratio:3/4; background:var(--black); border-radius:12px;
+    display:flex; align-items:center; justify-content:center; color:#fff;
+    border:3px dashed var(--yellow); text-align:center; padding:20px;
+    font-family:'Playfair Display', serif; font-size:22px;
+  }
+
+  /* BIG IDEA */
+  .big-idea{background:var(--black); color:#fff; padding:110px 0; text-align:center;}
+  .big-idea .wrap{max-width:800px;}
+  .big-idea p.tag{color:var(--yellow); letter-spacing:2px; font-size:13px; margin-bottom:30px; text-transform:uppercase;}
+  .big-idea h2{font-size:34px; line-height:1.5; font-weight:600;}
+  .big-idea h2 b{color:var(--yellow); font-style:italic; font-weight:700;}
+  .big-idea .caption{margin-top:28px; color:#aaa; font-size:15px;}
+
+  /* 3 COLUMN CONTENT */
+  .content-block{padding:100px 0;}
+  .content-block h2{font-size:34px; margin-bottom:50px; max-width:600px;}
+  .content-block h2 em{color:var(--gray); font-style:italic;}
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .card{background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:10px; padding:32px;}
+  .card .num{font-family:'Playfair Display', serif; font-size:34px; color:#d8d8d8; margin-bottom:16px;}
+  .card h3{font-size:18px; margin-bottom:12px; font-weight:700; font-family:'Be Vietnam Pro', sans-serif;}
+  .card p{font-size:14px; color:#444; margin-bottom:16px;}
+  .chip{display:inline-block; background:var(--cream); border:1px solid #e0e0e0; border-radius:20px; padding:5px 14px; font-size:12px; font-weight:600;}
+
+  /* QUALIFICATION */
+  .qual{padding:100px 0; display:grid; grid-template-columns:1fr 1fr; gap:50px;}
+  .qual .eyebrow{margin-bottom:16px;}
+  .qual h2{font-size:32px; margin-bottom:40px;}
+  .qual h2 em{color:var(--yellow); font-style:italic; -webkit-text-stroke:0.5px var(--black);}
+  .qual-list div{
+    display:flex; gap:14px; padding:16px 0; border-bottom:1px solid rgba(0,0,0,0.08);
+    font-size:15px;
+  }
+  .qual-list div::before{content:"→"; color:var(--yellow); font-weight:700;}
+  .voice-card{background:var(--black); color:#fff; border-radius:12px; padding:40px;}
+  .voice-card .who{color:var(--yellow); font-size:12px; letter-spacing:1.5px; margin-bottom:20px; text-transform:uppercase;}
+  .voice-card p{font-family:'Playfair Display', serif; font-style:italic; font-size:18px; line-height:1.7; margin-bottom:14px;}
+  .voice-card p.strong{font-style:normal; font-weight:600; color:var(--yellow);}
+  .voice-card .byline{margin-top:20px; color:#999; font-style:normal; font-size:14px;}
+
+  /* SOCIAL PROOF - placeholder */
+  .proof{background:var(--black); color:#fff; padding:90px 0; text-align:center;}
+  .proof .eyebrow{justify-content:center; color:#999;}
+  .proof .eyebrow::before{background:var(--yellow);}
+  .proof h2{font-size:30px; margin-bottom:50px;}
+  .proof h2 em{color:var(--yellow); font-style:italic;}
+  .proof-note{
+    border:2px dashed #444; border-radius:10px; padding:40px; color:#777; font-size:14px; max-width:600px; margin:0 auto;
+  }
+
+  /* PRICING */
+  .pricing{padding:100px 0; text-align:center;}
+  .pricing h2{font-size:32px; margin-bottom:40px; max-width:650px; margin-left:auto; margin-right:auto;}
+  .pricing h2 em{color:var(--gray); font-style:italic;}
+  .price-card{
+    background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:14px;
+    padding:44px; max-width:460px; margin:0 auto; text-align:left;
+  }
+  .price-card .label{text-align:center; letter-spacing:1.5px; font-size:12px; color:var(--gray); text-transform:uppercase; margin-bottom:16px;}
+  .price-card h3{text-align:center; font-size:20px; margin-bottom:28px; font-family:'Be Vietnam Pro',sans-serif; font-weight:700;}
+  .price-card ul{list-style:none; margin-bottom:30px;}
+  .price-card li{
+    display:flex; gap:12px; padding:14px 0; border-bottom:1px solid rgba(0,0,0,0.06); font-size:15px;
+  }
+  .price-card li::before{content:"✓"; color:#5a8a3a; font-weight:700;}
+  .price-card .price{text-align:center; margin-bottom:6px;}
+  .price-card .price span{font-family:'Playfair Display',serif; font-size:44px; font-weight:700;}
+  .price-card .price-note{text-align:center; color:var(--gray); font-size:13px; font-style:italic; margin-bottom:26px;}
+  .price-card .btn{display:block; text-align:center; width:100%;}
+
+  /* CLOSING */
+  .closing{background:var(--yellow); padding:110px 0; text-align:center;}
+  .closing p.tag{letter-spacing:2px; font-size:13px; color:#333; margin-bottom:20px; text-transform:uppercase;}
+  .closing h2{font-size:42px; margin-bottom:20px;}
+  .closing h2 em{font-style:italic;}
+  .closing p.sub{max-width:520px; margin:0 auto 36px; color:#333;}
+  .closing .btn{background:var(--black); color:#fff; border-color:var(--black);}
+  .closing .btn:hover{background:#fff; color:var(--black);}
+
+  footer{padding:30px 0; text-align:center; color:var(--gray); font-size:13px; border-top:1px solid rgba(0,0,0,0.08);}
+
+  @media(max-width:800px){
+    .hero{grid-template-columns:1fr; padding:50px 0 60px;}
+    .hero h1{font-size:34px;}
+    .cards{grid-template-columns:1fr;}
+    .qual{grid-template-columns:1fr;}
+    .big-idea h2{font-size:26px;}
+    .closing h2{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">NHÀ HR</div>
+  <a href="#pricing" class="btn">Mua ngay</a>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero wrap">
+  <div>
+    <div class="eyebrow">Tài liệu The Fundamentals</div>
+    <h1>CV không phải nơi liệt kê.<em>Là nơi bạn kể lại giá trị của chính mình.</em></h1>
+    <p class="context">Bạn đã cày cuốc bao nhiêu dự án, thi bao nhiêu cuộc thi, học thêm cả AI để tăng sức cạnh tranh cho profile. Nhưng cứ mở file CV lên là lại đơ — không biết chọn cái gì, viết sao cho ra chất, mà không phải đang kể lể.</p>
+    <p class="lead"><b>The Fundamentals</b> là tài liệu tự học Nhà HR đúc kết lại — để bạn tự tay biến những gì mình đã làm ở trường thành một chiếc CV đúng gu Big Corp, không cần ai cầm tay chỉ việc.</p>
+    <div class="cta-row">
+      <a href="#pricing" class="btn">Lấy tài liệu ngay →</a>
+      <small>Nhận link Drive ngay sau khi thanh toán</small>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <!-- THAY BẰNG ẢNH BÌA TÀI LIỆU THẬT -->
+    THE<br>FUNDAMENTALS
+  </div>
+</section>
+
+<!-- 2. BIG IDEA -->
+<section class="big-idea">
+  <div class="wrap">
+    <p class="tag">Sự thật</p>
+    <h2>CV không phải bản kê khai —<br><b>CV là điểm chạm marketing đầu tiên</b> của bạn với nhà tuyển dụng.</h2>
+    <p class="caption">Và một khi hiểu đúng điều đó, mọi câu chữ trong CV sẽ tự nhiên có sức nặng hơn.</p>
+  </div>
+</section>
+
+<!-- 3. NỘI DUNG 3 CỘT -->
+<section class="content-block wrap">
+  <h2>Bên trong tài liệu, bạn sẽ có <em>3 phần cốt lõi</em></h2>
+  <div class="cards">
+    <div class="card">
+      <div class="num">01</div>
+      <h3><!-- SỬA THEO ĐÚNG NỘI DUNG PHẦN 1 --></h3>
+      <p><!-- Mô tả ngắn phần 1 --></p>
+      <span class="chip">Sơ đồ định vị</span>
+    </div>
+    <div class="card">
+      <div class="num">02</div>
+      <h3><!-- SỬA THEO ĐÚNG NỘI DUNG PHẦN 2 --></h3>
+      <p><!-- Mô tả ngắn phần 2 --></p>
+      <span class="chip">Công thức viết</span>
+    </div>
+    <div class="card">
+      <div class="num">03</div>
+      <h3><!-- SỬA THEO ĐÚNG NỘI DUNG PHẦN 3 --></h3>
+      <p><!-- Mô tả ngắn phần 3 --></p>
+      <span class="chip">Checklist ATS</span>
+    </div>
+  </div>
+</section>
+
+<!-- 4. QUALIFICATION + VOICE -->
+<section class="qual wrap">
+  <div>
+    <div class="eyebrow">Dành cho ai</div>
+    <h2>Bạn đang ở <em>đúng chỗ</em> nếu...</h2>
+    <div class="qual-list">
+      <div>Chưa đi làm thực tế, không biết lấy gì để viết vào CV</div>
+      <div>Có nhiều bài tập nhóm ở trường nhưng thấy nó nhỏ nhặt, không biết viết sao cho chuyên nghiệp</div>
+      <div>Không biết cách diễn đạt, câu chữ lủng củng và không có số liệu chứng minh</div>
+      <div>Chưa định vị được thế mạnh bản thân phù hợp với gu tuyển dụng của các Big Corp</div>
+    </div>
+  </div>
+  <div class="voice-card">
+    <div class="who">Nhà HR nói</div>
+    <p>Giờ ai cũng bảo quăng CV cũ vào ChatGPT là xong — đúng. AI viết câu nào cũng mượt — cũng đúng.</p>
+    <p class="strong">Nhưng cái AI không làm thay được, là ngồi lại hiểu đúng câu chuyện của bạn: dự án nào đáng kể, số liệu nào đáng nhắc, thế mạnh nào cần làm nổi.</p>
+    <p>Hiểu đúng cái đó trước, rồi để AI giúp viết — CV lúc đó mới thật sự là của bạn, không phải một bản CV nào cũng na ná nhau.</p>
+    <div class="byline">— Nhà HR</div>
+  </div>
+</section>
+
+<!-- 5. SOCIAL PROOF (placeholder - thay bằng feedback thật) -->
+<section class="proof">
+  <div class="wrap">
+    <div class="eyebrow">Người học nói gì</div>
+    <h2>Khi tài liệu <em>thật sự được dùng</em></h2>
+    <div class="proof-note">
+      <!-- THAY PHẦN NÀY BẰNG SCREENSHOT/FEEDBACK THẬT TỪ NGƯỜI ĐÃ MUA -->
+      Chưa có testimonial thật — để trống, không dựng feedback giả.
+    </div>
+  </div>
+</section>
+
+<!-- 6. PRICING -->
+<section class="pricing wrap" id="pricing">
+  <h2>Bước nhỏ đầu tiên bạn cần đi <em>để nắm chắc nền tảng CV.</em></h2>
+  <div class="price-card">
+    <div class="label">The Fundamentals</div>
+    <h3>Tài liệu tự học đầy đủ</h3>
+    <ul>
+      <li><!-- Hạng mục 1 --></li>
+      <li><!-- Hạng mục 2 --></li>
+      <li><!-- Hạng mục 3 --></li>
+      <li>Nhận link Google Drive ngay sau khi thanh toán</li>
+    </ul>
+    <div class="price"><span>249K</span></div>
+    <div class="price-note"><!-- câu anchor giá, ví dụ: Bằng một buổi trà sữa với đứa bạn thân --></div>
+    <a href="#" class="btn">Mua The Fundamentals →</a>
+  </div>
+</section>
+
+<!-- 7. CLOSING -->
+<section class="closing">
+  <div class="wrap">
+    <p class="tag">Sẵn sàng chưa?</p>
+    <h2>Đừng để CV <em>kéo bạn lùi lại.</em></h2>
+    <p class="sub"><!-- câu chốt truyền cảm hứng, gắn với câu chuyện thật của Mentor nếu có --></p>
+    <a href="#pricing" class="btn">Lấy The Fundamentals →</a>
+  </div>
+</section>
+
+<footer>
+  @nhahr · The Fundamentals · © 2026 Nhà HR
+</footer>
+
+</body>
+</html>
