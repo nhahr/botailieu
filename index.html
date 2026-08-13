@@ -71,10 +71,35 @@
   .cta-row{display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
   .cta-row small{color:var(--gray); font-style:italic; font-size:14px;}
   .hero-visual{
-    aspect-ratio:3/4; background:var(--black); border-radius:12px;
-    display:flex; align-items:center; justify-content:center; color:#fff;
-    border:3px dashed var(--yellow); text-align:center; padding:20px;
-    font-family:'Playfair Display', serif; font-size:22px;
+    position:relative;
+    aspect-ratio:3/4;
+    display:flex; align-items:center; justify-content:center;
+    perspective:1200px;
+  }
+  .hero-visual .stack-back{
+    position:absolute;
+    top:0; left:0; width:100%; height:100%;
+    border-radius:12px;
+    transition:transform 0.2s ease-out;
+  }
+  .hero-visual .stack-1{
+    background:var(--yellow-deep);
+    transform:rotate(-6deg) translate(10px, 6px);
+    opacity:0.55;
+  }
+  .hero-visual .stack-2{
+    background:var(--black);
+    transform:rotate(-3deg) translate(5px, 3px);
+    opacity:0.85;
+  }
+  .hero-visual .stack-front{
+    position:relative;
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 30px 60px -12px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.06);
+    transition:transform 0.15s ease-out;
+    transform-style:preserve-3d;
   }
 
   /* BIG IDEA */
@@ -189,8 +214,10 @@
       <small>Nhận link Drive ngay sau khi thanh toán</small>
     </div>
   </div>
- <div class="hero-visual">
-  <img src="https://raw.githubusercontent.com/nhahr/botailieu/main/headline.png" alt="CV Foundation - Cẩm nang thực chiến" style="max-width:100%; max-height:100%; object-fit:contain;">
+  <div class="hero-visual">
+  <div class="stack-back stack-1"></div>
+  <div class="stack-back stack-2"></div>
+  <img src="https://raw.githubusercontent.com/nhahr/botailieu/main/headline.png" alt="CV Foundation - Cẩm nang thực chiến" class="stack-front">
 </div>
   
 </section>
@@ -294,5 +321,30 @@
   @nhahr · The Fundamentals · © 2026 Nhà HR
 </footer>
 
+<script>
+  const heroVisual = document.querySelector('.hero-visual');
+  const front = document.querySelector('.stack-front');
+  const back1 = document.querySelector('.stack-1');
+  const back2 = document.querySelector('.stack-2');
+
+  heroVisual.addEventListener('mousemove', (e) => {
+    const rect = heroVisual.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
+    const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
+
+    front.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    back1.style.transform = `rotate(-6deg) translate(${10 + rotateY}px, ${6 - rotateX}px)`;
+    back2.style.transform = `rotate(-3deg) translate(${5 + rotateY*0.6}px, ${3 - rotateX*0.6}px)`;
+  });
+
+  heroVisual.addEventListener('mouseleave', () => {
+    front.style.transform = 'perspective(1200px) rotateX(0) rotateY(0) scale(1)';
+    back1.style.transform = 'rotate(-6deg) translate(10px, 6px)';
+    back2.style.transform = 'rotate(-3deg) translate(5px, 3px)';
+  });
+</script>
+  
 </body>
 </html>
