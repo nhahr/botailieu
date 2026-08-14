@@ -117,8 +117,17 @@
   .cards{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
   .card{background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:10px; padding:32px;}
   .card .num{font-family:'Playfair Display', serif; font-size:34px; color:#d8d8d8; margin-bottom:16px;}
-  .card h3{font-size:18px; margin-bottom:12px; font-weight:700; font-family:'Be Vietnam Pro', sans-serif;}
-  .card p{font-size:14px; color:#444; margin-bottom:16px;}
+  .card .part-label{
+    display:block; font-size:12px; letter-spacing:1.5px; font-weight:700;
+    color:var(--yellow-deep); text-transform:uppercase; margin-bottom:6px;
+  }
+  .card h3{font-size:18px; margin-bottom:14px; font-weight:700; font-family:'Be Vietnam Pro', sans-serif; line-height:1.35;}
+  .card ul{list-style:none; margin-bottom:16px;}
+  .card ul li{
+    position:relative; padding-left:16px; font-size:14px; color:#444;
+    margin-bottom:8px; line-height:1.5;
+  }
+  .card ul li::before{content:"•"; position:absolute; left:0; color:var(--yellow-deep); font-weight:700;}
   .chip{display:inline-block; background:var(--cream); border:1px solid #e0e0e0; border-radius:20px; padding:5px 14px; font-size:12px; font-weight:600; white-space:nowrap;}
 
   /* QUALIFICATION */
@@ -240,26 +249,43 @@
   <div class="cards">
     <div class="card">
       <div class="num">01</div>
-      <h3>PART I: Bản chất của CV</h3>
-      <p>Hiểu đúng bản chất CV — nền tảng quyết định <b><i>chất</i></b> và <b><i>lượng</i></b> cho mọi dòng bạn viết sau này. Đi kèm bài tập tư duy, tự vấn bản thân trước khi đặt bút.</p>
+      <span class="part-label">PART I</span>
+      <h3>Bản chất của CV</h3>
+      <ul>
+       <li>Hiểu đúng bản chất CV — nền tảng quyết định <b><i>chất</i></b> và <b><i>lượng</i></b> cho mọi dòng bạn viết sau này.</li>
+       <li>Đi kèm bài tập tư duy, tự vấn bản thân trước khi đặt bút.</li>
+      </ul>
       <span class="chip">Tư duy nền tảng</span>
     </div>
     <div class="card">
       <div class="num">02</div>
-      <h3>PART II: CV, Resume và ATS</h3>
-      <p>Sự khác biệt giữa CV và resume, và lý do nhầm lẫn. Định nghĩa về hệ chấm điểm ATS và sự áp dụng phổ biến ở Việt Nam. Sự thật về ATS ít ai nghĩ đến, và quy tắc tối ưu theo quy chuẩn ATS.</p>
+      <span class="part-label">PART II</span>
+      <h3>CV, Resume và ATS</h3>
+      <ul>
+       <li>Sự khác biệt giữa CV và resume, và lý do nhầm lẫn.</li> 
+       <li>Định nghĩa về hệ chấm điểm ATS và sự áp dụng phổ biến ở Việt Nam.</li> 
+       <li>Sự thật về ATS ít ai nghĩ đến, và quy tắc tối ưu theo quy chuẩn ATS.</li>
+      </ul>
       <span class="chip">Quy tắc tối ưu CV</span>
     </div>
     <div class="card">
       <div class="num">03</div>
-      <h3>PART III: Bố cục CV hoàn chỉnh (Harvard Style)</h3>
-      <p>Nguyên tắc cốt lõi của CV Harvard. Những "hiểu lầm" phổ biến về khung Harvard. Đào sâu vào từng mục của CV - nên làm, không nên làm, ví dụ minh họa và công thức luyện tập</p>
+      <span class="part-label">PART III</span>
+      <h3>Bố cục CV hoàn chỉnh (Harvard Style)</h3>
+      <ul>
+      <li>Nguyên tắc cốt lõi của CV Harvard. Những "hiểu lầm" phổ biến về khung Harvard.</li> 
+      <li>Đào sâu vào từng mục của CV - nên làm, không nên làm, ví dụ minh họa và công thức luyện tập.</li>
+      </ul>
       <span class="chip">Framework thực chiến</span>
     </div>
     <div class="card">
       <div class="num">04</div>
-      <h3>PART IV: Khung tự chấm điểm CV</h3>
-      <p>Checklist tự chấm điểm dựa trên toàn bộ kiến thức đã học — giúp bạn nhìn tổng quan tình trạng CV hiện tại và biết chính xác cần khắc phục ở đâu.</p>
+      <span class="part-label">PART IV</span>
+      <h3>Khung tự chấm điểm CV</h3>
+      <ul>
+      <li>Checklist tự chấm điểm dựa trên toàn bộ kiến thức đã học.</li> 
+      <li>Giúp bạn nhìn tổng quan tình trạng CV hiện tại và biết chính xác cần khắc phục ở đâu.</li>
+      </ul>    
       <span class="chip">Checklist review CV</span>
     </div>
   </div>
