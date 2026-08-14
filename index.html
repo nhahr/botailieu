@@ -116,7 +116,7 @@
   .content-block h2 em{color:var(--yellow-deep); font-style:italic;}
   .cards{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
   .card{background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:10px; padding:32px;}
-  .card .num{font-family:'Playfair Display', serif; font-size:34px; color:#d8d8d8; margin-bottom:16px;}
+  .card .num{font-family:'Playfair Display', serif; font-size:40px; font-weight:700; color:#b8b8b8; margin-bottom:16px;}
   .card .part-label{
     display:block; font-size:12px; letter-spacing:1.5px; font-weight:700;
     color:var(--yellow-deep); text-transform:uppercase; margin-bottom:6px;
@@ -124,10 +124,13 @@
   .card h3{font-size:18px; margin-bottom:14px; font-weight:700; font-family:'Be Vietnam Pro', sans-serif; line-height:1.35;}
   .card ul{list-style:none; margin-bottom:16px;}
   .card ul li{
-    position:relative; padding-left:16px; font-size:14px; color:#444;
-    margin-bottom:8px; line-height:1.5;
+    display:flex; align-items:flex-start; gap:8px;
+    font-size:14px; color:#444; margin-bottom:8px; line-height:1.5;
   }
-  .card ul li::before{content:"•"; position:absolute; left:0; color:var(--yellow-deep); font-weight:700;}
+  .card ul li::before{
+    content:"•"; flex-shrink:0; color:var(--yellow-deep); font-weight:700;
+    line-height:1.5;
+  }
   .chip{display:inline-block; background:var(--cream); border:1px solid #e0e0e0; border-radius:20px; padding:5px 14px; font-size:12px; font-weight:600; white-space:nowrap;}
 
   /* QUALIFICATION */
@@ -271,7 +274,7 @@
     <div class="card">
       <div class="num">03</div>
       <span class="part-label">PART III</span>
-      <h3>Bố cục CV hoàn chỉnh (Harvard Style)</h3>
+      <h3>Bố cục CV hoàn chỉnh <span style="white-space:nowrap;">(Harvard Style)</span></h3>
       <ul>
       <li>Nguyên tắc cốt lõi của CV Harvard. Những "hiểu lầm" phổ biến về khung Harvard.</li> 
       <li>Đào sâu vào từng mục của CV - nên làm, không nên làm, ví dụ minh họa và công thức luyện tập.</li>
