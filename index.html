@@ -247,8 +247,8 @@
   .ts-card.is-empty{
     border:2px dashed #444; align-items:center; text-align:center; color:#777; font-size:14px;
   }
-  .ts-img{width:100%; border-radius:8px; overflow:hidden; margin-bottom:14px;}
-  .ts-img img{width:100%; height:auto; display:block;}
+  .ts-img{width:100%; aspect-ratio:1/1; border-radius:8px; overflow:hidden; margin-bottom:14px; background:#0d0d0d;}
+  .ts-img img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block;}
   .ts-quote{font-family:'Playfair Display', serif; font-style:italic; font-size:17px; line-height:1.7; color:#eee; margin-bottom:16px;}
   .ts-name{font-weight:700; font-size:14px; color:#fff;}
   .ts-role{font-size:13px; color:#999;}
@@ -489,14 +489,44 @@
         <div class="proof-col-title">First Users nói gì</div>
         <div class="ts-viewport">
           <div class="ts-frame">
-            <div class="ts-track" id="msgTrack">
-              <div class="ts-slide">
-                <div class="ts-card is-empty">
-                  <!-- THAY BẰNG ẢNH TIN NHẮN THẬT #1 -->
-                  Chưa có feedback thật — để trống
-                </div>
-              </div>
-            </div>
+          
+<div class="ts-track" id="msgTrack">
+  <div class="ts-slide">
+    <div class="ts-card">
+      <div class="ts-img"><img src="proof1.png" alt="Feedback người đọc"></div>
+      <span class="ts-name">Bạn Ngọc Hân - Đại học UEH</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+    </div>
+  </div>
+  <div class="ts-slide">
+    <div class="ts-card">
+      <div class="ts-img"><img src="Proof2.png" alt="Feedback người đọc"></div>
+      <span class="ts-name">Bạn Hoàng Linh - Đại học UEH</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+    </div>
+  </div>
+  <div class="ts-slide">
+    <div class="ts-card">
+      <div class="ts-img"><img src="Proof3.png" alt="Feedback người đọc"></div>
+      <span class="ts-name">Bạn Nhật Linh - Đại học UEL</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+    </div>
+  </div>
+  <div class="ts-slide">
+    <div class="ts-card">
+      <div class="ts-img"><img src="Proof4.png" alt="Feedback người đọc"></div>
+      <span class="ts-name">Bạn Minh Hải - Đại học UEF</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+    </div>
+  </div>
+  <div class="ts-slide">
+    <div class="ts-card">
+      <div class="ts-img"><img src="Proof5.png" alt="Feedback người đọc"></div>
+      <span class="ts-name">Bạn Phương Khanh - Đại học UEF</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+    </div>
+  </div>
+</div>
           </div>
         </div>
         <div class="ts-nav">
