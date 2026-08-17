@@ -166,6 +166,50 @@
   .voice-card .highlight-box b{font-weight:700; color:var(--yellow);}
   .voice-card .byline{margin-top:24px; color:#999; font-style:normal; font-size:14px; letter-spacing:0.3px;}
   .voice-card .byline .handle{color:#777;}
+
+  /* RESULTS SLIDER */
+  .results-slider{background:var(--black); padding:100px 0 90px; overflow:hidden;}
+  .rs-title{
+    color:#fff; font-size:38px; line-height:1.35; text-align:center;
+    margin-bottom:56px; max-width:750px; margin-left:auto; margin-right:auto;
+  }
+  .rs-title em{color:var(--yellow); font-style:italic;}
+  .rs-track-wrap{position:relative; max-width:1280px; margin:0 auto; padding:0 60px;}
+  .rs-track{
+    display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory;
+    scrollbar-width:none; -ms-overflow-style:none; padding:4px 2px 12px;
+  }
+  .rs-track::-webkit-scrollbar{display:none;}
+  .rs-slide{
+    flex:0 0 320px; scroll-snap-align:start;
+    background:#1a1a1a; border:1px solid rgba(255,255,255,0.08);
+    border-radius:12px; overflow:hidden;
+  }
+  .rs-img{
+    aspect-ratio:16/10;
+    background:repeating-linear-gradient(45deg,#222,#222 10px,#2a2a2a 10px,#2a2a2a 20px);
+    display:flex; align-items:center; justify-content:center;
+    color:#777; font-size:13px;
+  }
+  .rs-img img{width:100%; height:100%; object-fit:cover;}
+  .rs-info{padding:16px 18px;}
+  .rs-company{display:block; color:#fff; font-weight:700; font-size:15px; margin-bottom:2px;}
+  .rs-role{display:block; color:#999; font-size:13px;}
+  .rs-arrow{
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:44px; height:44px; border-radius:50%; border:none;
+    background:var(--yellow); color:var(--black); font-size:18px; font-weight:700;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    transition:0.2s; z-index:2;
+  }
+  .rs-arrow:hover{background:#fff;}
+  .rs-prev{left:0;}
+  .rs-next{right:0;}
+  @media(max-width:800px){
+    .rs-title{font-size:26px;}
+    .rs-slide{flex:0 0 260px;}
+    .rs-arrow{display:none;}
+  }
   
   /* SOCIAL PROOF - placeholder */
   .proof{background:var(--black); color:#fff; padding:90px 0; text-align:center;}
@@ -337,6 +381,40 @@
 </div>
 </section>
 
+<!-- SLIDER: KẾT QUẢ THỰC CHIẾN -->
+<section class="results-slider">
+  <div class="wrap">
+    <h2 class="rs-title">Kết quả thực chiến —<br><em>Đã được kiểm chứng bởi các Tập đoàn lớn.</em></h2>
+  </div>
+  <div class="rs-track-wrap">
+    <button class="rs-arrow rs-prev" id="rsPrev" aria-label="Trước">←</button>
+    <div class="rs-track" id="rsTrack">
+      <div class="rs-slide">
+        <div class="rs-img"><!-- Ảnh email trúng tuyển (đã che thông tin cá nhân) -->Ảnh email trúng tuyển</div>
+        <div class="rs-info">
+          <span class="rs-company"><!-- Tên công ty --></span>
+          <span class="rs-role"><!-- Vị trí --></span>
+        </div>
+      </div>
+      <div class="rs-slide">
+        <div class="rs-img">Ảnh email trúng tuyển</div>
+        <div class="rs-info">
+          <span class="rs-company"><!-- Tên công ty --></span>
+          <span class="rs-role"><!-- Vị trí --></span>
+        </div>
+      </div>
+      <div class="rs-slide">
+        <div class="rs-img">Ảnh email trúng tuyển</div>
+        <div class="rs-info">
+          <span class="rs-company"><!-- Tên công ty --></span>
+          <span class="rs-role"><!-- Vị trí --></span>
+        </div>
+      </div>
+    </div>
+    <button class="rs-arrow rs-next" id="rsNext" aria-label="Sau">→</button>
+  </div>
+</section>
+
 <!-- 5. SOCIAL PROOF (placeholder - thay bằng feedback thật) -->
 <section class="proof">
   <div class="wrap">
@@ -403,6 +481,20 @@
     front.style.transform = 'perspective(1200px) rotateX(0) rotateY(0) scale(1)';
     back1.style.transform = 'rotate(-6deg) translate(10px, 6px)';
     back2.style.transform = 'rotate(-3deg) translate(5px, 3px)';
+  });
+</script>
+
+  <script>
+  const rsTrack = document.getElementById('rsTrack');
+  const rsPrev = document.getElementById('rsPrev');
+  const rsNext = document.getElementById('rsNext');
+  const slideWidth = 344;
+
+  rsNext.addEventListener('click', () => {
+    rsTrack.scrollBy({ left: slideWidth, behavior: 'smooth' });
+  });
+  rsPrev.addEventListener('click', () => {
+    rsTrack.scrollBy({ left: -slideWidth, behavior: 'smooth' });
   });
 </script>
   
