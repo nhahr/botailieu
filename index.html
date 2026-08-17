@@ -174,27 +174,28 @@
     margin-bottom:56px; max-width:750px; margin-left:auto; margin-right:auto;
   }
   .rs-title em{color:var(--yellow); font-style:italic;}
-  .rs-track-wrap{position:relative; max-width:1280px; margin:0 auto; padding:0 60px;}
-  .rs-track{
-    display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory;
-    scrollbar-width:none; -ms-overflow-style:none; padding:4px 2px 12px;
+
+  .rs-viewport{
+    position:relative; max-width:600px; margin:0 auto; padding:0 70px;
   }
-  .rs-track::-webkit-scrollbar{display:none;}
+  .rs-frame{overflow:hidden; border-radius:12px;}
+  .rs-track{
+    display:flex; transition:transform 0.4s ease;
+  }
   .rs-slide{
-    flex:0 0 320px; scroll-snap-align:start;
-    background:#1a1a1a; border:1px solid rgba(255,255,255,0.08);
-    border-radius:12px; overflow:hidden;
+    flex:0 0 100%; background:#1a1a1a; border:1px solid rgba(255,255,255,0.08);
   }
   .rs-img{
-    aspect-ratio:16/10;
+    aspect-ratio:4/5;
     background:repeating-linear-gradient(45deg,#222,#222 10px,#2a2a2a 10px,#2a2a2a 20px);
     display:flex; align-items:center; justify-content:center;
     color:#777; font-size:13px;
   }
-  .rs-img img{width:100%; height:100%; object-fit:cover;}
-  .rs-info{padding:16px 18px;}
-  .rs-company{display:block; color:#fff; font-weight:700; font-size:15px; margin-bottom:2px;}
+  .rs-img img{width:100%; height:100%; object-fit:cover; display:block;}
+  .rs-info{padding:18px 20px;}
+  .rs-company{display:block; color:#fff; font-weight:700; font-size:16px; margin-bottom:2px;}
   .rs-role{display:block; color:#999; font-size:13px;}
+
   .rs-arrow{
     position:absolute; top:50%; transform:translateY(-50%);
     width:44px; height:44px; border-radius:50%; border:none;
@@ -205,10 +206,18 @@
   .rs-arrow:hover{background:#fff;}
   .rs-prev{left:0;}
   .rs-next{right:0;}
+
+  .rs-dots{display:flex; justify-content:center; gap:8px; margin-top:24px;}
+  .rs-dot{
+    width:8px; height:8px; border-radius:50%; background:#444;
+    border:none; cursor:pointer; transition:0.2s; padding:0;
+  }
+  .rs-dot.active{background:var(--yellow); width:22px; border-radius:4px;}
+
   @media(max-width:800px){
     .rs-title{font-size:26px;}
-    .rs-slide{flex:0 0 260px;}
-    .rs-arrow{display:none;}
+    .rs-viewport{padding:0 8px;}
+    .rs-arrow{width:36px; height:36px; font-size:15px;}
   }
   
   /* SOCIAL PROOF - placeholder */
@@ -386,33 +395,40 @@
   <div class="wrap">
     <h2 class="rs-title">Kết quả thực chiến —<br><em>Đã được kiểm chứng bởi các Tập đoàn lớn.</em></h2>
   </div>
-  <div class="rs-track-wrap">
+
+  <div class="rs-viewport">
     <button class="rs-arrow rs-prev" id="rsPrev" aria-label="Trước">←</button>
-    <div class="rs-track" id="rsTrack">
-      <div class="rs-slide">
-        <div class="rs-img"><!-- Ảnh email trúng tuyển (đã che thông tin cá nhân) -->Ảnh email trúng tuyển</div>
-        <div class="rs-info">
-          <span class="rs-company"><!-- Tên công ty --></span>
-          <span class="rs-role"><!-- Vị trí --></span>
+
+    <div class="rs-frame">
+      <div class="rs-track" id="rsTrack">
+        <div class="rs-slide">
+          <div class="rs-img"><img src="anh1.png" alt="Email trúng tuyển 1"></div>
+          <div class="rs-info">
+            <span class="rs-company">Shopee Apprentice Program 2026</span>
+            <span class="rs-role">Shopee Internship</span>
+          </div>
         </div>
-      </div>
-      <div class="rs-slide">
-        <div class="rs-img">Ảnh email trúng tuyển</div>
-        <div class="rs-info">
-          <span class="rs-company"><!-- Tên công ty --></span>
-          <span class="rs-role"><!-- Vị trí --></span>
+        <div class="rs-slide">
+          <div class="rs-img"><img src="anh2.png" alt="Email trúng tuyển 2"></div>
+          <div class="rs-info">
+            <span class="rs-company">MoMo Talent 2026</span>
+            <span class="rs-role">MoMo Management Trainee</span>
+          </div>
         </div>
-      </div>
-      <div class="rs-slide">
-        <div class="rs-img">Ảnh email trúng tuyển</div>
-        <div class="rs-info">
-          <span class="rs-company"><!-- Tên công ty --></span>
-          <span class="rs-role"><!-- Vị trí --></span>
+        <div class="rs-slide">
+          <div class="rs-img"><img src="anh3.png" alt="Email trúng tuyển 3"></div>
+          <div class="rs-info">
+            <span class="rs-company">Masan Young Entrepreneur 2026</span>
+            <span class="rs-role">Sales Management Trainee</span>
+          </div>
         </div>
       </div>
     </div>
+
     <button class="rs-arrow rs-next" id="rsNext" aria-label="Sau">→</button>
   </div>
+
+  <div class="rs-dots" id="rsDots"></div>
 </section>
 
 <!-- 5. SOCIAL PROOF (placeholder - thay bằng feedback thật) -->
@@ -484,17 +500,40 @@
   });
 </script>
 
-  <script>
+ <script>
   const rsTrack = document.getElementById('rsTrack');
   const rsPrev = document.getElementById('rsPrev');
   const rsNext = document.getElementById('rsNext');
-  const slideWidth = 344;
+  const rsDots = document.getElementById('rsDots');
+  const rsSlides = document.querySelectorAll('.rs-slide');
+  let rsIndex = 0;
+
+  rsSlides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'rs-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goToSlide(i));
+    rsDots.appendChild(dot);
+  });
+
+  function updateSlider(){
+    rsTrack.style.transform = `translateX(-${rsIndex * 100}%)`;
+    document.querySelectorAll('.rs-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === rsIndex);
+    });
+  }
+
+  function goToSlide(i){
+    rsIndex = i;
+    updateSlider();
+  }
 
   rsNext.addEventListener('click', () => {
-    rsTrack.scrollBy({ left: slideWidth, behavior: 'smooth' });
+    rsIndex = (rsIndex + 1) % rsSlides.length;
+    updateSlider();
   });
   rsPrev.addEventListener('click', () => {
-    rsTrack.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+    rsIndex = (rsIndex - 1 + rsSlides.length) % rsSlides.length;
+    updateSlider();
   });
 </script>
   
