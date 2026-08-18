@@ -403,8 +403,15 @@
     display:flex; gap:12px; padding:14px 0; border-bottom:1px solid rgba(0,0,0,0.06); font-size:15px;
   }
   .price-card li::before{content:"✓"; color:#5a8a3a; font-weight:700;}
+  .price-card li .kw{
+  font-weight:700; color:var(--black);
+  background:linear-gradient(transparent 82%, var(--yellow) 82%);
+}
   .price-card .price{text-align:center; margin-bottom:6px;}
-  .price-card .price span{font-family:'Playfair Display',serif; font-size:44px; font-weight:700;}
+  .price-card .price span{
+  font-family:'Playfair Display',serif; font-size:44px; font-weight:700;
+  font-variant-numeric:lining-nums tabular-nums;
+}
   .price-card .price-note{text-align:center; color:var(--gray); font-size:13px; font-style:italic; margin-bottom:26px;}
   .price-card .btn{display:block; text-align:center; width:100%;}
 
@@ -726,10 +733,10 @@
     <div class="label">CV Foundation|Cẩm nang Thực chiến</div>
     <h3>Đã đến lúc "khai bút"</h3>
     <ul>
-      <li>1 File hiểu tổng quan về bản chất CV và các hiểu lầm phổ biến</li>
-      <li>1 File hiểu về sự khác biệt giữa CV và Resume, quy tắc tối ưu CV theo ATS</li>
-      <li>1 File hướng dẫn chi tiết các đề mục trong CV hoàn chỉnh theo Havard Style</li>
-      <li>1 File khung tự chấm điểm CV và Q&A để giải đáp các thắc mắc đi kèm khi viết CV</li>
+      <li>1 File hiểu tổng quan về <span class="kw">bản chất CV</span> và các hiểu lầm phổ biến</li>
+      <li>1 File hiểu về <span class="kw">sự khác biệt giữa CV và Resume</span>, <span class="kw">quy tắc tối ưu CV</span> theo ATS</li>
+      <li>1 File <span class="kw">hướng dẫn chi tiết các đề mục</span> trong CV hoàn chỉnh theo <span class="kw">Harvard Style</span></li>
+      <li>1 File khung <span class="kw">tự chấm điểm CV</span> và Q&A để giải đáp các thắc mắc đi kèm khi viết CV</li>
       <li>Nhận link Google Drive ngay sau khi thanh toán</li>
     </ul>
     <div class="price"><span>219K</span></div>
