@@ -353,15 +353,17 @@
   box-decoration-break:clone; -webkit-box-decoration-break:clone;
 }
 .quote-visual-col{
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:20px;
   padding-top:8px;
 }
 .brand-mark-img{
   width:130px; height:130px; object-fit:contain; flex-shrink:0;
+  align-self:center;
 }
 .brand-caption{
   font-size:13px; letter-spacing:2px; font-weight:700; color:var(--gray);
-  text-transform:uppercase; text-align:center;
+  text-transform:uppercase; text-align:left;
+  align-self:flex-start;
 }
 
 @media(max-width:800px){
@@ -708,7 +710,7 @@
         <span class="quote-icon">"</span>
         <span class="quote-line"></span>
       </div>
-      <p>Cảm ơn sự ủng hộ và những góp ý siêu giá trị từ các bạn sinh viên. Nhà HR đã ghi nhận toàn bộ phản hồi và đang chuẩn bị cho <span class="badge">những bộ tài liệu và series chuyên sâu tiếp theo</span>. Hãy cùng chờ đón nhé! 🙋</p>
+      <p>Cảm ơn sự ủng hộ và những góp ý siêu giá trị từ các bạn sinh viên. Nhà HR ghi nhận tất cả phản hồi và đang chuẩn bị cho <span class="badge">những series chuyên sâu tiếp theo.</span> Hãy cùng chờ đón nhé! 🙋</p>
     </div>
     <div class="quote-visual-col">
       <img src="logo.png" class="brand-mark-img" alt="Nhà HR">
