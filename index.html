@@ -233,6 +233,11 @@
   .proof .eyebrow::before{background:var(--yellow);}
   .proof h2{font-size:34px; line-height:1.35;}
   .proof h2 em{color:var(--yellow); font-style:italic;}
+  .proof h2 .highlight{
+  font-weight:700; color:#fff; font-style:normal;
+  background:linear-gradient(transparent 60%, var(--yellow) 60%);
+  display:inline;
+}
 
   .proof-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
   .proof-col-title{
@@ -284,8 +289,6 @@
     .proof-grid{grid-template-columns:1fr; gap:60px;}
   }
   
-  }
-
   /* PRICING */
   .pricing{padding:100px 0; text-align:center;}
   .pricing h2{font-size:32px; margin-bottom:40px; max-width:650px; margin-left:auto; margin-right:auto;}
