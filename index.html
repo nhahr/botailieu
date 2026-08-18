@@ -266,8 +266,18 @@
   .ts-quote{font-family:'Playfair Display', serif; font-style:italic; font-size:17px; line-height:1.7; color:#eee; margin-bottom:16px;}
   .ts-name{font-weight:700; font-size:14px; color:#fff;}
   .ts-role{font-size:13px; color:#999;}
-  .ts-card .ts-role:only-child, .ts-card p.ts-quote + .ts-role{
+.ts-card .ts-role:only-child, .ts-card p.ts-quote + .ts-role{
   padding-left:16px; display:block; margin-top:0;
+}
+.ts-card .quote-wrap{
+  border-left:3px solid var(--yellow);
+  padding-left:20px;
+  position:relative;
+}
+.ts-card .quote-mark{
+  font-family:'Playfair Display', serif;
+  font-size:60px; color:var(--yellow); opacity:0.5;
+  line-height:0.5; display:block; margin-bottom:8px;
 }
 
   .ts-nav{display:flex; align-items:center; justify-content:center; gap:18px; margin-top:22px;}
@@ -560,24 +570,33 @@
         <div class="ts-viewport">
           <div class="ts-frame">
           <div class="ts-track" id="quoteTrack">
-  <div class="ts-slide">
-    <div class="ts-card" style="padding:32px;">
-      <p class="ts-quote">"Dạ em nghĩ nếu Nhà cho thêm những từ ngữ chuyên ngành mà bọn em cần sử dụng trong CV thì sẽ upgrade tài liệu hơn ạ."</p>
-      <span class="ts-role">Góp ý từ độc giả</span>
+<div class="ts-slide">
+  <div class="ts-card" style="padding:32px;">
+    <div class="quote-wrap">
+      <span class="quote-mark">"</span>
+      <p class="ts-quote" style="margin-bottom:0;">"Dạ em nghĩ nếu Nhà cho thêm những từ ngữ chuyên ngành mà bọn em cần sử dụng trong CV thì sẽ upgrade tài liệu hơn ạ."</p>
     </div>
+    <span class="ts-role" style="margin-top:16px;">Góp ý từ độc giả Cẩm nang Thực chiến | CV Foundation - Bạn Nhật Linh </span>
   </div>
-  <div class="ts-slide">
-    <div class="ts-card" style="padding:32px;">
-      <p class="ts-quote">"Nhà ơi, em muốn Nhà bổ sung tips phỏng vấn nữa ạ, Nhà làm thành series hỗ trợ sinh viên tuyển dụng luôn đi ạ."</p>
-      <span class="ts-role">Góp ý từ độc giả</span>
+</div>
+<div class="ts-slide">
+  <div class="ts-card" style="padding:32px;">
+    <div class="quote-wrap">
+      <span class="quote-mark">"</span>
+      <p class="ts-quote" style="margin-bottom:0;">“Nhà ơi, em muốn Nhà bổ sung tips phỏng vấn nữa ạ, Nhà làm thành series hỗ trợ sinh viên tuyển dụng luôn đi ạ.”</p>
     </div>
+    <span class="ts-role" style="margin-top:16px;">Góp ý từ độc giả Cẩm nang Thực chiến | CV Foundation - Bạn Phương Khanh </span>
   </div>
-  <div class="ts-slide">
-    <div class="ts-card" style="padding:32px;">
-      <p class="ts-quote">"Em nghĩ nếu bổ sung thêm thì em mong có thêm ví dụ nữa ạ, vì từ những ví dụ đó thì tụi em càng học hỏi được nhiều nữa ạ."</p>
-      <span class="ts-role">Góp ý từ độc giả</span>
+</div>
+ <div class="ts-slide">
+  <div class="ts-card" style="padding:32px;">
+    <div class="quote-wrap">
+      <span class="quote-mark">"</span>
+      <p class="ts-quote" style="margin-bottom:0;">“Em nghĩ nếu bổ sung thêm thì em mong có thêm ví dụ nữa ạ, vì từ những ví dụ đó thì tụi em càng học hỏi được nhiều nữa ạ.”</p>
     </div>
+    <span class="ts-role" style="margin-top:16px;">Góp ý từ độc giả Cẩm nang Thực chiến | CV Foundation - Bạn Minh Hải </span>
   </div>
+</div>
 </div>
           </div>
         </div>
