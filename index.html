@@ -221,8 +221,8 @@
   }
   
  /* SOCIAL PROOF - 2 SLIDERS */
-  .proof{background:var(--black); color:#fff; padding:90px 0 100px;}
-  .proof-head{text-align:center; margin-bottom:60px;}
+  .proof{background:var(--black); color:#fff; padding:70px 0 80px;}
+  .proof-head{text-align:center; margin-bottom:40px;}
   .proof .eyebrow{justify-content:center; color:#999;}
   .proof .eyebrow::before{background:var(--yellow);}
   .proof h2{font-size:34px; line-height:1.35;}
@@ -234,21 +234,24 @@
     text-transform:uppercase; margin-bottom:20px; text-align:center;
   }
 
-  .ts-viewport{margin:0 auto;}
+  .ts-viewport{max-width:340px; margin:0 auto;}
   .ts-frame{overflow:hidden; border-radius:12px;}
   .ts-track{display:flex; transition:transform 0.4s ease; align-items:stretch;}
   .ts-slide{flex:0 0 100%;}
 
   .ts-card{
     background:#1a1a1a; border:1px solid rgba(255,255,255,0.08);
-    border-radius:12px; padding:28px; text-align:left; min-height:180px;
+    border-radius:12px; overflow:hidden; text-align:left; min-height:340px;
     display:flex; flex-direction:column; justify-content:center;
   }
   .ts-card.is-empty{
-    border:2px dashed #444; align-items:center; text-align:center; color:#777; font-size:14px;
+    border:2px dashed #444; align-items:center; text-align:center; color:#777; font-size:14px; padding:28px;
   }
-  .ts-img{width:100%; aspect-ratio:1/1; border-radius:8px; overflow:hidden; margin-bottom:14px; background:#0d0d0d;}
-  .ts-img img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block;}
+  .ts-img{width:100%; aspect-ratio:1/1; background:#0d0d0d; display:flex; align-items:center; justify-content:center;}
+  .ts-img img{width:100%; height:100%; object-fit:contain; display:block;}
+  .ts-card .ts-name, .ts-card .ts-role{padding-left:16px;}
+  .ts-card .ts-name{margin-top:12px;}
+  .ts-card .ts-role{display:block; margin-bottom:14px;}
   .ts-quote{font-family:'Playfair Display', serif; font-style:italic; font-size:17px; line-height:1.7; color:#eee; margin-bottom:16px;}
   .ts-name{font-weight:700; font-size:14px; color:#fff;}
   .ts-role{font-size:13px; color:#999;}
@@ -270,8 +273,11 @@
   }
   .ts-dot.active{background:var(--yellow); width:22px; border-radius:4px;}
 
+  .proof-grid{max-width:900px; margin:0 auto;}
   @media(max-width:900px){
     .proof-grid{grid-template-columns:1fr; gap:60px;}
+  }
+  
   }
 
   /* PRICING */
