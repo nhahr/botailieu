@@ -42,6 +42,13 @@
   }
   .btn-outline:hover{background:var(--black); color:#fff;}
 
+  .btn-gold{
+  background:var(--yellow-deep); color:var(--black); border-color:var(--yellow-deep);
+}
+.btn-gold:hover{
+  background:var(--black); color:#fff; border-color:var(--black);
+}
+  
   /* HERO */
   .hero{padding:80px 0 100px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;}
   .eyebrow{
@@ -377,11 +384,17 @@
   
   /* PRICING */
   .pricing{background:var(--brown-wood); padding:110px 0; text-align:center; border-top:2px solid rgba(245,217,8,0.4);}
-  .pricing h2{font-size:34px; margin-bottom:48px; max-width:650px; margin-left:auto; margin-right:auto; color:#fff;}
+  .pricing h2{font-size:34px; margin-bottom:48px; max-width:780px; margin-left:auto; margin-right:auto; color:#fff;}
   .pricing h2 em{color:var(--yellow); font-style:italic;}
   .price-card{
     background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:14px;
     padding:52px; max-width:620px; margin:0 auto; text-align:left;
+    position:relative; overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.4);
+  }
+  .price-card::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:6px;
+    background:linear-gradient(90deg, var(--yellow-deep), var(--yellow));
   }
   .price-card .label{text-align:center; letter-spacing:1.5px; font-size:12px; color:var(--gray); text-transform:uppercase; margin-bottom:16px;}
   .price-card h3{text-align:center; font-size:20px; margin-bottom:28px; font-family:'Be Vietnam Pro',sans-serif; font-weight:700;}
@@ -708,7 +721,7 @@
 <!-- 6. PRICING -->
 <section class="pricing" id="pricing">
   <div class="wrap">
-  <h2>Giờ thì đến lượt bạn <em>viết nên câu chuyện CV của riêng mình.</em></h2>
+  <h2>Giờ thì đến lượt bạn<br><em>viết nên câu chuyện CV của riêng mình.</em></h2>
   <div class="price-card">
     <div class="label">CV Foundation|Cẩm nang Thực chiến</div>
     <h3>Đã đến lúc "khai bút"</h3>
@@ -721,7 +734,7 @@
     </ul>
     <div class="price"><span>219K</span></div>
     <div class="price-note">Bằng vài buổi trà sữa với đứa bạn thân, nhưng dùng được mãi.</div>
-    <a href="#" class="btn">Mua cuốn Cẩm nang Thực chiến CV →</a>
+    <a href="#" class="btn btn-gold">Mua cuốn Cẩm nang Thực chiến CV →</a>
   </div>
   </div>
 </section>
