@@ -333,9 +333,9 @@
 .quote-ticker:hover .ticker-track{animation-play-state:paused;}
   
 /* NHÀ HR QUOTE */
-.nhahr-quote{padding:56px 0 100px;}
+.nhahr-quote{padding:60px 0 90px;}
 .quote-grid{
-  display:grid; grid-template-columns:1.4fr 0.6fr; gap:60px; align-items:center;
+  display:grid; grid-template-columns:1.4fr 0.6fr; gap:60px; align-items:start;
 }
 .quote-text-col .quote-top{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
 .quote-text-col .quote-icon{
@@ -353,24 +353,15 @@
   box-decoration-break:clone; -webkit-box-decoration-break:clone;
 }
 .quote-visual-col{
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+  padding-top:8px;
 }
-.quote-visual-col .brand-caption{
-  margin-top:24px;
-}
-.brand-mark{
-  width:150px; height:150px; border-radius:50%;
-  background:var(--yellow); display:flex; align-items:center; justify-content:center;
-  min-width:150px; flex-shrink:0;
-  box-shadow:0 20px 40px -12px rgba(245,217,8,0.35);
-}
-.brand-mark span{
-  font-family:'Playfair Display', serif; font-weight:700; font-size:48px;
-  color:var(--black); letter-spacing:1px;
+.brand-mark-img{
+  width:130px; height:130px; object-fit:contain; flex-shrink:0;
 }
 .brand-caption{
-  font-size:13px; letter-spacing:3px; font-weight:700; color:var(--gray);
-  text-transform:uppercase;
+  font-size:13px; letter-spacing:2px; font-weight:700; color:var(--gray);
+  text-transform:uppercase; text-align:center;
 }
 
 @media(max-width:800px){
@@ -717,13 +708,11 @@
         <span class="quote-icon">"</span>
         <span class="quote-line"></span>
       </div>
-      <p>Cảm ơn sự ủng hộ và những góp ý siêu giá trị từ các bạn sinh viên.</p>
-      <p>Nhà HR đã ghi nhận toàn bộ phản hồi và đang chuẩn bị cho <span class="badge">những bộ tài liệu và series chuyên sâu tiếp theo</span></p>.
-      <p>Hãy cùng chờ đón nhé!🙋</p>
+      <p>Cảm ơn sự ủng hộ và những góp ý siêu giá trị từ các bạn sinh viên. Nhà HR đã ghi nhận toàn bộ phản hồi và đang chuẩn bị cho <span class="badge">những bộ tài liệu và series chuyên sâu tiếp theo</span>. Hãy cùng chờ đón nhé! 🙋</p>
     </div>
     <div class="quote-visual-col">
-    <img src="logo.png" class="brand-mark-img">
-      <span class="brand-caption">@NHÀHR | CV Foundation - Cẩm nang thực chiến </span>
+      <img src="logo.png" class="brand-mark-img" alt="Nhà HR">
+      <span class="brand-caption">@NHÀHR</span>
     </div>
   </div>
 </section>
