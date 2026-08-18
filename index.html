@@ -332,23 +332,48 @@
 
 .quote-ticker:hover .ticker-track{animation-play-state:paused;}
   
-  /* NHÀ HR QUOTE */
-.nhahr-quote{padding:90px 0;}
-.nhahr-quote .quote-box{max-width:680px; margin:0 auto;}
-.nhahr-quote .quote-top{display:flex; align-items:center; gap:16px; margin-bottom:18px;}
-.nhahr-quote .quote-icon{
-  font-family:'Playfair Display', serif; font-size:52px; font-weight:700;
+/* NHÀ HR QUOTE */
+.nhahr-quote{padding:100px 0;}
+.quote-grid{
+  display:grid; grid-template-columns:1.4fr 0.6fr; gap:60px; align-items:center;
+}
+.quote-text-col .quote-top{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
+.quote-text-col .quote-icon{
+  font-family:'Playfair Display', serif; font-size:44px; font-weight:700;
   color:var(--black); line-height:0.6;
 }
-.nhahr-quote .quote-line{flex:1; height:1px; background:rgba(0,0,0,0.15);}
-.nhahr-quote p{
-  font-family:'Playfair Display', serif; font-style:italic; font-weight:600;
-  font-size:23px; line-height:1.7; color:var(--black);
+.quote-text-col .quote-line{flex:1; height:1px; background:rgba(0,0,0,0.15);}
+.quote-text-col p{
+  font-family:'Be Vietnam Pro', sans-serif; font-weight:500; font-style:normal;
+  font-size:20px; line-height:1.85; color:var(--black); text-align:justify;
 }
-.nhahr-quote .badge{
+.quote-text-col .badge{
   background:var(--yellow); padding:1px 10px; border-radius:5px;
-  font-style:normal; font-weight:700; display:inline;
+  font-weight:700; display:inline;
   box-decoration-break:clone; -webkit-box-decoration-break:clone;
+}
+.quote-visual-col{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+}
+.brand-mark{
+  width:150px; height:150px; border-radius:50%;
+  background:var(--yellow); display:flex; align-items:center; justify-content:center;
+  min-width:150px; flex-shrink:0;
+  box-shadow:0 20px 40px -12px rgba(245,217,8,0.35);
+}
+.brand-mark span{
+  font-family:'Playfair Display', serif; font-weight:700; font-size:48px;
+  color:var(--black); letter-spacing:1px;
+}
+.brand-caption{
+  font-size:13px; letter-spacing:3px; font-weight:700; color:var(--gray);
+  text-transform:uppercase;
+}
+
+@media(max-width:800px){
+  .quote-grid{grid-template-columns:1fr; text-align:center;}
+  .quote-text-col p{text-align:left;}
+  .quote-text-col .quote-top{justify-content:center;}
 }
   
   /* PRICING */
@@ -681,14 +706,20 @@
   </div>
 </section>
   
-  <!-- NHÀ HR QUOTE -->
+<!-- NHÀ HR QUOTE -->
 <section class="nhahr-quote wrap">
-  <div class="quote-box">
-    <div class="quote-top">
-      <span class="quote-icon">"</span>
-      <span class="quote-line"></span>
+  <div class="quote-grid">
+    <div class="quote-text-col">
+      <div class="quote-top">
+        <span class="quote-icon">"</span>
+        <span class="quote-line"></span>
+      </div>
+      <p>Cảm ơn sự ủng hộ và những góp ý siêu giá trị từ các bạn sinh viên. Nhà HR đã ghi nhận toàn bộ phản hồi và đang chuẩn bị cho <span class="badge">những bộ tài liệu và series chuyên sâu tiếp theo</span>. Hãy cùng chờ đón nhé!</p>
     </div>
-    <p>Cảm ơn sự ủng hộ và những góp ý siêu giá trị từ các bạn sinh viên! Nhà HR đã ghi nhận toàn bộ phản hồi và đang chuẩn bị cho <span class="badge">những bộ tài liệu và series chuyên sâu tiếp theo</span>. Hãy cùng chờ đón nhé! 🙋</p>
+    <div class="quote-visual-col">
+    <img src="logo.png" class="brand-mark-img">
+      <span class="brand-caption">@NHÀHR</span>
+    </div>
   </div>
 </section>
 
