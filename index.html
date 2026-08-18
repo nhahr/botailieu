@@ -266,6 +266,9 @@
   .ts-quote{font-family:'Playfair Display', serif; font-style:italic; font-size:17px; line-height:1.7; color:#eee; margin-bottom:16px;}
   .ts-name{font-weight:700; font-size:14px; color:#fff;}
   .ts-role{font-size:13px; color:#999;}
+  .ts-card .ts-role:only-child, .ts-card p.ts-quote + .ts-role{
+  padding-left:16px; display:block; margin-top:0;
+}
 
   .ts-nav{display:flex; align-items:center; justify-content:center; gap:18px; margin-top:22px;}
   .ts-arrow{
@@ -510,35 +513,35 @@
     <div class="ts-card">
       <div class="ts-img"><img src="proof1.png" alt="Feedback người đọc"></div>
       <span class="ts-name">Bạn Ngọc Hân - Đại học UEH</span>
-      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến _ CV Foundation </span>
     </div>
   </div>
   <div class="ts-slide">
     <div class="ts-card">
       <div class="ts-img"><img src="Proof2.png" alt="Feedback người đọc"></div>
       <span class="ts-name">Bạn Hoàng Linh - Đại học UEH</span>
-      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV _ CV Foundation </span>
     </div>
   </div>
   <div class="ts-slide">
     <div class="ts-card">
       <div class="ts-img"><img src="Proof3.png" alt="Feedback người đọc"></div>
       <span class="ts-name">Bạn Nhật Linh - Đại học UEL</span>
-      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến _ CV Foundation </span>
     </div>
   </div>
   <div class="ts-slide">
     <div class="ts-card">
       <div class="ts-img"><img src="Proof4.png" alt="Feedback người đọc"></div>
       <span class="ts-name">Bạn Minh Hải - Đại học UEF</span>
-      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến _ CV Foundation </span>
     </div>
   </div>
   <div class="ts-slide">
     <div class="ts-card">
       <div class="ts-img"><img src="Proof5.png" alt="Feedback người đọc"></div>
       <span class="ts-name">Bạn Phương Khanh - Đại học UEF</span>
-      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến CV</span>
+      <span class="ts-role">Đã mua cuốn Cấm nang thực chiến _ CV Foundation </span>
     </div>
   </div>
 </div>
@@ -556,14 +559,26 @@
         <div class="proof-col-title">Nhà luôn lắng nghe các góp ý 🙆</div>
         <div class="ts-viewport">
           <div class="ts-frame">
-            <div class="ts-track" id="quoteTrack">
-              <div class="ts-slide">
-                <div class="ts-card is-empty">
-                  <!-- THAY BẰNG QUOTE THẬT #1 -->
-                  Chưa có quote thật — để trống
-                </div>
-              </div>
-            </div>
+          <div class="ts-track" id="quoteTrack">
+  <div class="ts-slide">
+    <div class="ts-card" style="padding:32px;">
+      <p class="ts-quote">"Dạ em nghĩ nếu Nhà cho thêm những từ ngữ chuyên ngành mà bọn em cần sử dụng trong CV thì sẽ upgrade tài liệu hơn ạ."</p>
+      <span class="ts-role">Góp ý từ độc giả</span>
+    </div>
+  </div>
+  <div class="ts-slide">
+    <div class="ts-card" style="padding:32px;">
+      <p class="ts-quote">"Nhà ơi, em muốn Nhà bổ sung tips phỏng vấn nữa ạ, Nhà làm thành series hỗ trợ sinh viên tuyển dụng luôn đi ạ."</p>
+      <span class="ts-role">Góp ý từ độc giả</span>
+    </div>
+  </div>
+  <div class="ts-slide">
+    <div class="ts-card" style="padding:32px;">
+      <p class="ts-quote">"Em nghĩ nếu bổ sung thêm thì em mong có thêm ví dụ nữa ạ, vì từ những ví dụ đó thì tụi em càng học hỏi được nhiều nữa ạ."</p>
+      <span class="ts-role">Góp ý từ độc giả</span>
+    </div>
+  </div>
+</div>
           </div>
         </div>
         <div class="ts-nav">
