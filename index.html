@@ -312,6 +312,26 @@
 }
  .proof-note b{color:var(--yellow); font-weight:700; font-style:normal;}
 
+  /* QUOTE TICKER */
+.quote-ticker{
+  background:var(--black); overflow:hidden;
+  padding:26px 0; border-top:1px solid rgba(255,255,255,0.08);
+}
+.ticker-track{display:flex; width:max-content; animation:ticker-scroll 32s linear infinite;}
+.ticker-group{display:flex; align-items:center; flex-shrink:0;}
+.ticker-group span{
+  font-family:'Playfair Display', serif; font-style:italic; font-size:16px;
+  color:#ccc; white-space:nowrap; padding:0 24px;
+}
+.ticker-group .star{color:var(--yellow); font-style:normal; padding:0 8px;}
+
+@keyframes ticker-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+.quote-ticker:hover .ticker-track{animation-play-state:paused;}
+  
   /* NHÀ HR QUOTE */
 .nhahr-quote{padding:90px 0;}
 .nhahr-quote .quote-box{max-width:680px; margin:0 auto;}
