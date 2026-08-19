@@ -16,11 +16,12 @@
     --gray:#6b6b6b;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  body{
+   body{
     font-family:'Be Vietnam Pro', sans-serif;
     background:var(--cream);
     color:var(--black);
     line-height:1.6;
+    padding-top:76px;
   }
   h1,h2,h3{font-family:'Playfair Display', serif;}
   .wrap{max-width:1280px; margin:0 auto; padding:0 32px;}
@@ -29,6 +30,8 @@
   nav{
     display:flex; justify-content:space-between; align-items:center;
     padding:20px 24px; border-bottom:1px solid rgba(0,0,0,0.08);
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    background:var(--cream);
   }
   nav .logo{font-weight:700; letter-spacing:0.5px;}
   .btn{
@@ -100,7 +103,7 @@
     transform:rotate(-3deg) translate(5px, 3px);
     opacity:0.85;
   }
-  .hero-visual .stack-front{
+   .hero-visual .stack-front{
     position:relative;
     width:100%; height:100%;
     object-fit:cover;
@@ -108,6 +111,7 @@
     box-shadow:0 30px 60px -12px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.06);
     transition:transform 0.15s ease-out;
     transform-style:preserve-3d;
+    cursor:pointer;
   }
 
   /* BIG IDEA */
@@ -444,7 +448,7 @@
 
 <nav>
   <div class="logo">NHÀ HR</div>
-  <a href="#pricing" class="btn">Mua ngay</a>
+  <a href="https://forms.gle/BMb5jGt773JYUftx7" target="_blank" rel="noopener" class="btn">Mua ngay</a>
 </nav>
 
 <!-- 1. HERO -->
@@ -466,10 +470,12 @@
       <small>Nhận link Drive ngay sau khi thanh toán</small>
     </div>
   </div>
-  <div class="hero-visual">
+ <div class="hero-visual">
   <div class="stack-back stack-1"></div>
   <div class="stack-back stack-2"></div>
-  <img src="https://raw.githubusercontent.com/nhahr/botailieu/main/headline.png" alt="CV Foundation - Cẩm nang thực chiến" class="stack-front">
+  <a href="https://forms.gle/N6kBN3yvVgcw1EGYA" target="_blank" rel="noopener">
+    <img src="https://raw.githubusercontent.com/nhahr/botailieu/main/headline.png" alt="CV Foundation - Cẩm nang thực chiến" class="stack-front">
+  </a>
 </div>
   
 </section>
