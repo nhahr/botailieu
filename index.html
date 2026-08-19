@@ -16,20 +16,20 @@
     --gray:#6b6b6b;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-   body{
+  body{
     font-family:'Be Vietnam Pro', sans-serif;
     background:var(--cream);
     color:var(--black);
     line-height:1.6;
-    padding-top:76px;
+    padding-top:60px;
   }
   h1,h2,h3{font-family:'Playfair Display', serif;}
   .wrap{max-width:1280px; margin:0 auto; padding:0 32px;}
 
   /* NAV */
-  nav{
+ nav{
     display:flex; justify-content:space-between; align-items:center;
-    padding:20px 24px; border-bottom:1px solid rgba(0,0,0,0.08);
+    padding:12px 24px; border-bottom:1px solid rgba(0,0,0,0.08);
     position:fixed; top:0; left:0; right:0; z-index:1000;
     background:var(--cream);
   }
@@ -40,11 +40,14 @@
     font-weight:600; border:2px solid var(--black); transition:0.2s;
   }
   .btn:hover{background:var(--yellow); color:var(--black);}
-  .btn-outline{
+   .btn-outline{
     background:transparent; color:var(--black); border:2px solid var(--black);
   }
   .btn-outline:hover{background:var(--black); color:#fff;}
 
+  .btn-nav{
+    padding:10px 22px; font-size:14px;
+  }
   .btn-gold{
   background:var(--yellow-deep); color:var(--black); border-color:var(--yellow-deep);
 }
@@ -448,7 +451,7 @@
 
 <nav>
   <div class="logo">NHÀ HR</div>
-  <a href="https://forms.gle/BMb5jGt773JYUftx7" target="_blank" rel="noopener" class="btn">Mua ngay</a>
+  <a href="https://forms.gle/BMb5jGt773JYUftx7" target="_blank" rel="noopener" class="btn btn-nav">Mua ngay</a>
 </nav>
 
 <!-- 1. HERO -->
